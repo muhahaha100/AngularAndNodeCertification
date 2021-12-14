@@ -9,6 +9,10 @@ import { DeleteProductsComponent } from './delete-products/delete-products.compo
 import { ProductListingComponent } from './product-listing/product-listing.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import {FormsModule} from "@angular/forms";
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { CustomerHomepageComponent } from './customer-homepage/customer-homepage.component';
+import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import {FormsModule} from "@angular/forms";
     EditProductComponent,
     DeleteProductsComponent,
     ProductListingComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    HeaderComponent,
+    FooterComponent,
+    CustomerHomepageComponent,
+    AdminHomepageComponent
   ],
   imports: [
     BrowserModule,
