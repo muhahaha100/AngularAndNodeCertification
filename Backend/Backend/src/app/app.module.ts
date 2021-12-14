@@ -23,7 +23,7 @@ import { AdminHomepageComponent } from './admin-homepage/admin-homepage.componen
     DeleteProductsComponent,
     ProductListingComponent,
     ProductDetailsComponent,
-    ManageProductsComponent
+    ManageProductsComponent,
     HeaderComponent,
     FooterComponent,
     CustomerHomepageComponent,
