@@ -7,8 +7,8 @@ import {CustomerHomepageComponent} from "./customer-homepage/customer-homepage.c
 import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
 const routes: Routes = [
   { path: 'add', component: AddNewProductComponent },
-  { path: '', component: CustomerHomepageComponent },
-  { path: 'adminHome', component: AdminHomepageComponent }
+  { path: 'adminHome', component: AdminHomepageComponent },
+  { path: '', component: CustomerHomepageComponent }
 ];
 
 @NgModule({
