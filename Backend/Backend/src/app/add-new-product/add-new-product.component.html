@@ -1,0 +1,39 @@
+<h1> add a header here </h1>
+
+<form class="container" (ngSubmit)="onSubmit()" #productForm="ngForm">
+
+  <div class="form-group">
+    <label for="NameInput">Product Name</label>
+    <input [(ngModel)]="product.name" type="text" name="nameInput" class="form-control" id="NameInput" placeholder="Enter Product Name" required>
+    <small> {{product.name}} </small>
+  </div>
+
+  <div class="form-group">
+    <label for="DepartmentInput">Product Department</label>
+    <input [(ngModel)]="product.department" name="departmentInput" type="text" class="form-control" id="DepartmentInput" placeholder="Enter Product Department" required>
+  </div>
+
+  <div class="form-group">
+    <label for="PriceInput">Product Price</label>
+    <input [(ngModel)]="product.price" name="priceInput" type="number" class="form-control" id="PriceInput" placeholder="Enter Product Price">
+  </div>
+
+  <div class="form-group">
+    <label for="DiscountInput">Discount</label>
+    <input [(ngModel)]="product.discount" name="discountInput" type="number" class="form-control" id="DiscountInput" placeholder="Enter Discount Price">
+  </div>
+
+  <div class="form-group">
+    <label for="ImageInput">Image</label>
+    <input [(ngModel)]="product.image"  name="imageInput" type="text" class="form-control" id="ImageInput" placeholder="Enter Product Image">
+  </div>
+
+  <div class="form-group">
+    <label for="DescriptionInput">Product Description</label>
+    <input [(ngModel)]="product.description" name="descriptionInput" type="text" class="form-control" id="DescriptionInput" placeholder="Enter Product Description">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<h1> add a footer here </h1>
