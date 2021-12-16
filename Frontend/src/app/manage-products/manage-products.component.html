@@ -1,2 +1,47 @@
-<p>manage-products works!</p>
+<style type="text/css">
+  .h-divider{
+    margin-top:5px;
+    margin-bottom:5px;
+    height:1px;
+    width:100%;
+    border-top:1px solid gray;
+  }
+</style>
 
+<app-header> </app-header>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <h1> Manage Products &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+    <button class="btn-primary" routerLink="/add"> Add New Product </button>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<div class="container">
+  <ul>
+    <li *ngFor='let product of products; let i=index; '>
+      <div class="row">
+        <div class="col-sm-3">
+          <h4>{{product.name}}</h4>
+        </div>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-3 row">
+          <button routerLink="editProduct" class="btn-info">Edit</button>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+          <button routerLink="deleteProduct" class="btn-danger">Delete</button>
+        </div>
+      </div>
+      <small>Price: {{product.price | currency: 'EUR' }}</small>
+      <br>
+      <div class="h-divider"> </div>
+      <br>
+    </li>
+  </ul>
+</div>
+
+<app-footer> </app-footer>
