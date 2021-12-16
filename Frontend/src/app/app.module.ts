@@ -8,17 +8,17 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import { DeleteProductsComponent } from './delete-products/delete-products.component';
 import { ProductListingComponent } from './product-listing/product-listing.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ManageProductsComponent } from './manage-products/manage-products.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CustomerHomepageComponent } from './customer-homepage/customer-homepage.component';
-import {ReactiveFormsModule} from "@angular/forms";
 import { DiscountValidatorDirective } from './discount-validator.directive';
 import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart/cart-item/cart-item.component';
 import { CheckoutComponent } from './cart/checkout/checkout.component';
 import { OrdersComponent } from './cart/orders/orders.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 @NgModule({
@@ -37,7 +37,8 @@ import { OrdersComponent } from './cart/orders/orders.component';
     CartComponent,
     CartItemComponent,
     CheckoutComponent,
-    OrdersComponent
+    OrdersComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

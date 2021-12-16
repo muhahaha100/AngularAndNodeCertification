@@ -9,17 +9,19 @@ import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart/cart-item/cart-item.component';
 import { CheckoutComponent } from './cart/checkout/checkout.component';
 import { OrdersComponent } from './cart/orders/orders.component'
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   { path: 'add', component: AddNewProductComponent },
   { path: 'manage', component: ManageProductsComponent },
   { path: 'manage/editProduct', component: EditProductComponent },
   { path: 'adminhome', component: ManageProductsComponent },
-  { path: '', component: CustomerHomepageComponent },
-  { path: 'cart', component: CartComponent},
-  { path: 'cart/item', component: CartItemComponent},
-  { path: 'cart/checkout', component: CheckoutComponent},
-  { path: 'cart/orders', component: OrdersComponent},
+  { path: 'cart', component: CartComponent },
+  { path: 'cart/item', component: CartItemComponent },
+  { path: 'cart/checkout', component: CheckoutComponent },
+  { path: 'cart/orders', component: OrdersComponent },
+  { path: 'profile', component: UserProfileComponent },
+  { path: '', component: CustomerHomepageComponent }
 ];
 
 @NgModule({
