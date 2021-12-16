@@ -15,6 +15,11 @@ import { FooterComponent } from './footer/footer.component';
 import { CustomerHomepageComponent } from './customer-homepage/customer-homepage.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { DiscountValidatorDirective } from './discount-validator.directive';
+import { CartComponent } from './cart/cart.component';
+import { CartItemComponent } from './cart/cart-item/cart-item.component';
+import { CheckoutComponent } from './cart/checkout/checkout.component';
+import { OrdersComponent } from './cart/orders/orders.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +33,11 @@ import { DiscountValidatorDirective } from './discount-validator.directive';
     HeaderComponent,
     FooterComponent,
     CustomerHomepageComponent,
-    DiscountValidatorDirective
+    DiscountValidatorDirective,
+    CartComponent,
+    CartItemComponent,
+    CheckoutComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
