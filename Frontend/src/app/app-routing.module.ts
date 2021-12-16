@@ -4,9 +4,13 @@ import {AddNewProductComponent} from "./add-new-product/add-new-product.componen
 import {ManageProductsComponent} from "./manage-products/manage-products.component";
 
 import {CustomerHomepageComponent} from "./customer-homepage/customer-homepage.component"
+import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
+import {EditProductComponent} from "./edit-product/edit-product.component";
 const routes: Routes = [
   { path: 'add', component: AddNewProductComponent },
-  { path: 'adminhome', component: ManageProductsComponent },
+  { path: 'manage', component: ManageProductsComponent },
+  { path: 'manage/editProduct', component: EditProductComponent },
+  { path: 'adminHome', component: AdminHomepageComponent },
   { path: '', component: CustomerHomepageComponent }
 ];
 
