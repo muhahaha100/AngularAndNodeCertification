@@ -16,8 +16,8 @@ const config = { 'secret': 'mysecret' }
 router.post('/register', (req, res) => {
     const myhashpassword = bcrypt.hashSync(req.body.password, 8)
     Mylogin.create({
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
+        fname: req.body.firstname,
+        lname: req.body.lastname,
         email: req.body.email,
         password: myhashpassword
     },(err,mydata) => {

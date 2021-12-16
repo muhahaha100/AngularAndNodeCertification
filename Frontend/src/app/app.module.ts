@@ -13,7 +13,6 @@ import { ManageProductsComponent } from './manage-products/manage-products.compo
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CustomerHomepageComponent } from './customer-homepage/customer-homepage.component';
-import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +25,7 @@ import { AdminHomepageComponent } from './admin-homepage/admin-homepage.componen
     ManageProductsComponent,
     HeaderComponent,
     FooterComponent,
-    CustomerHomepageComponent,
-    AdminHomepageComponent
+    CustomerHomepageComponent
   ],
   imports: [
     BrowserModule,
