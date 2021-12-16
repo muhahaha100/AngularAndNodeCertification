@@ -14,6 +14,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CustomerHomepageComponent } from './customer-homepage/customer-homepage.component';
 import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { DiscountValidatorDirective } from './discount-validator.directive';
+
 
 @NgModule({
   declarations: [
@@ -27,12 +30,14 @@ import { AdminHomepageComponent } from './admin-homepage/admin-homepage.componen
     HeaderComponent,
     FooterComponent,
     CustomerHomepageComponent,
-    AdminHomepageComponent
+    AdminHomepageComponent,
+    DiscountValidatorDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
