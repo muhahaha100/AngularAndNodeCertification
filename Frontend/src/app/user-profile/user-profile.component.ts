@@ -3,7 +3,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
-
+/*
 export class UserProfile{
   constructor(
     public id:number,
@@ -20,7 +20,7 @@ export class UserProfile{
   ){}
  
   }
-
+*/
  
 
 
@@ -63,14 +63,14 @@ export class UserProfileComponent implements OnInit {
   interests: Array<String>=["Apple", "Samsung","Laptops"]
 
 
-  constructor(private httpClient : HttpClient){
+  constructor(){
 
   } 
 
   ngOnInit(): void {
-    this.getProfile()
+    //this.getProfile()
   }
-
+/*
   getProfile(){
     this.httpClient.get<any>('http://localhost:3000/api/profiles').subscribe(
       response =>
@@ -81,7 +81,7 @@ export class UserProfileComponent implements OnInit {
     )
     
   }
-
+*/
   updateAddress()
   {
     this.editAddress=true
