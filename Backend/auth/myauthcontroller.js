@@ -19,7 +19,8 @@ router.post('/register', (req, res) => {
         fname: req.body.firstname,
         lname: req.body.lastname,
         email: req.body.email,
-        password: myhashpassword
+        password: myhashpassword,
+        type: "customer"
     },(err,mydata) => {
         if(err) 
         {
