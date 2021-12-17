@@ -20,6 +20,7 @@ import { CheckoutComponent } from './cart/checkout/checkout.component';
 import { OrdersComponent } from './cart/orders/orders.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoginComponent } from './login-page/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { LoginComponent } from './login-page/login/login.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

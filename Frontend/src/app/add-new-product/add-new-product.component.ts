@@ -50,9 +50,7 @@ export class AddNewProductComponent implements OnInit {
   }
 
   onSubmit(): void{
-    console.log("UwU");
-    console.log(this.productForm.get('name')?.errors);
-    console.log(this.product);
+    console.log("Please insert API call to add the product once the API is up and running! ");
   }
 
 }

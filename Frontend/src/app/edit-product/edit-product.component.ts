@@ -38,8 +38,7 @@ export class EditProductComponent implements OnInit {
   }
 
   onSubmit(): void{
-    console.log("OWO");
-    console.log(this.productForm.get('name')?.errors);
+    console.log("Please insert edit API call here once that is up and running! ");
   }
 
   ngOnInit(): void {

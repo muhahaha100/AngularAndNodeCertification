@@ -11,6 +11,17 @@ app.use('/auth', myauthcontroller)     //authentication implementation
 const session = require('express-session')
 app.use(session({secret: 'myloginsecret', resave: false, saveUninitialized: false}))
 
+/**
+ *  vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+ *
+ *  THIS IS NOT THE API THAT COMMUNICATED WITH MONGO DB (at least for the product components )
+ *  THE REAL API IS UNDER /api/index.js
+ *  Sorry for the confusion
+ *
+ *  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *
+ */
+
 const myrequest = require('request')
 
 app.set('view engine', 'ejs')
@@ -39,6 +50,16 @@ app.get('/',(req,res)=>{
     mydatafrompromose.then(JSON.parse).then((result) => {
         res.send(result)
     })
+})
+
+app.get('/oscar',(req,res)=>{
+    let json = [
+        products = {
+            name = "sugoi",
+            price = 100
+        }
+    ];
+    res.send(JSON.stringify(json));
 })
 
 app.listen(8080)

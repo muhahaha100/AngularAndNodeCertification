@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-manage-products',
@@ -25,9 +26,19 @@ export class ManageProductsComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private http: HttpClient, private changeDetection: ChangeDetectorRef) { }
 
   ngOnInit(): void {
+    this.getData();
+  }
+
+  getData(){
+    const url ='http://localhost:8080/api/v1/products'
+    this.http.get(url).subscribe((res)=>{
+      this.products = (res as any).products;
+      this.changeDetection.detectChanges();
+      console.log(res);
+    })
   }
 
 }
