@@ -1,7 +1,8 @@
 import {HttpClient} from '@angular/common/http';
-import { THIS_EXPR, ThrowStmt } from '@angular/compiler/src/output/output_ast';
+//import { THIS_EXPR, ThrowStmt } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+
 
 
 // export class UserProfile{
@@ -40,6 +41,9 @@ export class UserProfileComponent implements OnInit {
 
   });
 
+  li:any;
+  lis=[];
+
   
 
   profile1= 
@@ -64,13 +68,21 @@ export class UserProfileComponent implements OnInit {
   interests: Array<String>=["Apple", "Samsung","Laptops"]
 
 //private httpClient : HttpClient
-  constructor(){
+  constructor(private http : HttpClient){
 
   } 
 
   ngOnInit(): void {
+
+    this.http.get('http://local.mydomain.com:3000/api/profiles/4')
+    .subscribe(data => {
+ 
+      console.log(JSON.stringify(data))
+      
+    });
+    }
     //this.getProfile()
-  }
+  
 
   // getProfile(){
   //   this.httpClient.get<any>('http://localhost:3000/api/profiles').subscribe(
