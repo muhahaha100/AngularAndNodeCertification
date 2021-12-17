@@ -1,5 +1,5 @@
 import {HttpClient} from '@angular/common/http';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+//import { THIS_EXPR, ThrowStmt } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
@@ -21,6 +21,24 @@ export class UserProfile{
  
   }
 */
+
+
+// export class UserProfile{
+//   constructor(
+//     public id:number,
+//       public fname:string,
+//       public lname:string,
+//       public email:string,
+//       public phone:number,
+//       public address:{
+//         street:string,
+//         city:string,
+//         zipcode:number,
+//         state:string
+//       }
+//   ){}
+ 
+//   }
  
 
 
@@ -39,6 +57,9 @@ export class UserProfileComponent implements OnInit {
     state: new FormControl()
 
   });
+
+  li:any;
+  lis=[];
 
   
 
@@ -60,28 +81,35 @@ export class UserProfileComponent implements OnInit {
 
   editAddress:boolean= false
   defaultimage:boolean= false
+  updateimage:boolean= false
   interests: Array<String>=["Apple", "Samsung","Laptops"]
 
-
-  constructor(){
+//private httpClient : HttpClient
+  constructor(private http : HttpClient){
 
   } 
 
   ngOnInit(): void {
+
+    this.http.get('http://local.mydomain.com:3000/api/profiles/4')
+    .subscribe(data => {
+ 
+      console.log(JSON.stringify(data))
+      
+    });
+    }
     //this.getProfile()
-  }
-/*
-  getProfile(){
-    this.httpClient.get<any>('http://localhost:3000/api/profiles').subscribe(
-      response =>
-      {
-        console.log(response);
+  
+
+  // getProfile(){
+  //   this.httpClient.get<any>('http://localhost:3000/api/profiles').subscribe(
+  //     response =>
+  //     {
+  //       console.log(response);
         
-      }
-    )
-    
-  }
-*/
+  //     }
+  //   )
+  // }
   updateAddress()
   {
     this.editAddress=true
@@ -90,6 +118,7 @@ export class UserProfileComponent implements OnInit {
   deleteImage()
   {
     this.defaultimage=true
+    this.updateimage=false
   }
 
   addressinfo()
@@ -99,6 +128,12 @@ export class UserProfileComponent implements OnInit {
     this.profile1.address.state= this.addressForm.value.state
     this.profile1.address.zipcode= this.addressForm.value.zipcode
     this.editAddress= false
+  }
+
+  updateImage(){
+    this.updateimage=true
+    this.defaultimage=false
+
   }
 
 }

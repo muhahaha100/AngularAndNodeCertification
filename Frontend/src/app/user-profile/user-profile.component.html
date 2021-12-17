@@ -1,144 +1,154 @@
 <app-header></app-header>
 <div class="student-profile py-4">
-    <div class="container" style="border-radius: 2px; border-color: gray; border-style: solid;">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="card shadow-sm">
-            <div class="card-header bg-transparent text-center">
-                <div *ngIf = "!defaultimage">
-                    
-              <img class="profile_img" style="width: 200px; margin-left: 10%;" src="https://source.unsplash.com/600x300/?student" alt="student dp">
-              <br>
-            </div>
-            <div *ngIf="defaultimage">
-                <img style="width: 200px; margin-left: 10%;" [src]="'assets/images/defaultimage.jpg'" >
-                <br>
-            </div>
-              <button type="button" style="margin-left: 5%; background-color: rgb(216, 180, 21);" 
-                  (click)= deleteImage()>Delete Image</button>
-              &nbsp;
-              <button type="button" style=" white-space:pre-wrap; background-color: rgb(115, 164, 209);">Upload</button>
-            
-              <div class="card-body" style="margin-left: 25%;"> 
-              <p> FirstName:<b> {{profile1.fname}} </b></p> 
-              
-              <p>Lastname: <b>{{profile1.lname}}</b></p>
-              <p>Email:  <b>{{profile1.email}}</b></p>
-              <p>Phone:<b> {{profile1.phone}}</b></p>
-              <p>Interests</p>
-              <ul>
-                <a *ngFor="let emp of interests"><b>{{emp}} </b></a>
-              </ul>
-             Address 
-                <div *ngIf="!editAddress">
-
+  <div class="container" style="border-radius: 2px; border-color: gray; border-style: solid;">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent text-center">
+              <div *ngIf = "!defaultimage">
                 
 
-                  <b>{{profile1.address.street}}, {{profile1.address.city}}, 
-                      {{profile1.address.zipcode}}, {{profile1.address.state}}
-                  </b>
-                </div>
+            <div *ngIf="!updateimage">
+              <img class="profile_img" style="width: 200px; margin-left: 10%;" src="https://source.unsplash.com/600x300/?student" alt="student dp">
+              </div>
+            <br>
+          </div>
+          <div  *ngIf="updateimage">
+            <img class="profile_img" style="width: 200px; margin-left: 10%;" src="https://teachin.id/content/uploads/photos/2021/09/sngine_47b9b3daba0071601b41e9a306ebbfec.jpg" alt="student dp">
+          </div>
+          <div *ngIf="defaultimage">
+              <img style="width: 200px; margin-left: 10%;" [src]="'assets/images/defaultimage.jpg'" >
+              <br>
+          </div>
+            <button type="button" style="margin-left: 5%; background-color: rgb(216, 180, 21);" 
+                (click)= deleteImage()>Delete Image</button>
+            &nbsp;
             
-           
-                <div   style="text-align: left;" *ngIf="!editAddress">
-                  
-                    <button style="background-color:rgb(115, 164, 209);"
-                        (click)= updateAddress()>
-                         Edit</button>
-                </div>
 
-                <div *ngIf = "editAddress">
+          
+            <button type="button" (click)=updateImage() style=" white-space:pre-wrap; background-color: rgb(115, 164, 209);">Upload</button>
+        
+
+        
+            <div class="card-body" style="margin-left: 25%;"> 
+            <p> FirstName:<b> {{profile1.fname}} </b></p> 
+            
+            <p>Lastname: <b>{{profile1.lname}}</b></p>
+            <p>Email:  <b>{{profile1.email}}</b></p>
+            <p>Phone:<b> {{profile1.phone}}</b></p>
+            <p>Interests</p>
+            <ul>
+              <a *ngFor="let emp of interests"><b>{{emp}} </b></a>
+            </ul>
+           Address 
+              <div *ngIf="!editAddress">
+
+              
+
+                <b>{{profile1.address.street}}, {{profile1.address.city}}, 
+                    {{profile1.address.zipcode}}, {{profile1.address.state}}
+                </b>
+              </div>
+          
+         
+              <div   style="text-align: left;" *ngIf="!editAddress">
+                
+                  <button style="background-color:rgb(115, 164, 209);"
+                      (click)= updateAddress()>
+                       Edit</button>
+              </div>
+
+              <div *ngIf = "editAddress">
 
 
-                  <form [formGroup]="addressForm"
-                  (ngSubmit)= "addressinfo()" action="/">
-                     <label for="streetaddress">Street Address</label><br>
-                     <input formControlName="street" type="text" required>
-                        <br>
-                     <label for="city">City</label><br>
-                     <input type="text" formControlName="city" required>
-
-                     <br>
-                     <label for="state">State</label><br>
-                     <select   formControlName="state" required>
-                        <option value>- Select -</option>
-                        <option value="AL">AL - Alabama</option>
-                        <option value="AK">AK - Alaska</option>
-                        <option value="AS">AS - American Samoa</option>
-                        <option value="AZ">AZ - Arizona</option>
-                        <option value="AR">AR - Arkansas</option>
-                        <option value="CA">CA - California</option>
-                        <option value="CO">CO - Colorado</option>
-                        <option value="CT">CT - Connecticut</option>
-                        <option value="DE">DE - Delaware</option>
-                        <option value="DC">DC - District of Columbia</option>
-                        <option value="FL">FL - Florida</option>
-                        <option value="GA">GA - Georgia</option>
-                        <option value="GU">GU - Guam</option>
-                        <option value="HI">HI - Hawaii</option>
-                        <option value="ID">ID - Idaho</option>
-                        <option value="IL">IL - Illinois</option>
-                        <option value="IN">IN - Indiana</option>
-                        <option value="IA">IA - Iowa</option>
-                        <option value="KS">KS - Kansas</option>
-                        <option value="KY">KY - Kentucky</option>
-                        <option value="LA">LA - Louisiana</option>
-                        <option value="ME">ME - Maine</option>
-                        <option value="MD">MD - Maryland</option>
-                        <option value="MA">MA - Massachusetts</option>
-                        <option value="MI">MI - Michigan</option>
-                        <option value="MN">MN - Minnesota</option>
-                        <option value="MS">MS - Mississippi</option>
-                        <option value="MO">MO - Missouri</option>
-                        <option value="MT">MT - Montana</option>
-                        <option value="NE">NE - Nebraska</option>
-                        <option value="NV">NV - Nevada</option>
-                        <option value="NH">NH - New Hampshire</option>
-                        <option value="NJ">NJ - New Jersey</option>
-                        <option value="NM">NM - New Mexico</option>
-                        <option value="NY">NY - New York</option>
-                        <option value="NC">NC - North Carolina</option>
-                        <option value="ND">ND - North Dakota</option>
-                        <option value="MP">MP - Northern Mariana Islands</option>
-                        <option value="OH">OH - Ohio</option>
-                        <option value="OK">OK - Oklahoma</option>
-                        <option value="OR">OR - Oregon</option>
-                        <option value="PA">PA - Pennsylvania</option>
-                        <option value="PR">PR - Puerto Rico</option>
-                        <option value="RI">RI - Rhode Island</option>
-                        <option value="SC">SC - South Carolina</option>
-                        <option value="SD">SD - South Dakota</option>
-                        <option value="TN">TN - Tennessee</option>
-                        <option value="TX">TX - Texas</option>
-                        <option value="UM">UM - United States Minor Outlying Islands</option>
-                        <option value="UT">UT - Utah</option>
-                        <option value="VT">VT - Vermont</option>
-                        <option value="VI">VI - Virgin Islands</option>
-                        <option value="VA">VA - Virginia</option>
-                        <option value="WA">WA - Washington</option>
-                        <option value="WV">WV - West Virginia</option>
-                        <option value="WI">WI - Wisconsin</option>
-                        <option value="WY">WY - Wyoming</option>
-                        <option value="AA">AA - Armed Forces Americas</option>
-                        <option value="AE">AE - Armed Forces Africa</option>
-                        <option value="AE">AE - Armed Forces Canada</option>
-                        <option value="AE">AE - Armed Forces Europe</option>
-                        <option value="AE">AE - Armed Forces Middle East</option>
-                        <option value="AP">AP - Armed Forces Pacific</option>
-                      </select>
+                <form [formGroup]="addressForm"
+                (ngSubmit)= "addressinfo()" action="/">
+                   <label for="streetaddress">Street Address</label><br>
+                   <input formControlName="street" type="text" required>
                       <br>
-             
-                      <label for="zipcode">ZipCode</label><br>
-                      <input type="number" formControlName="zipcode" required>
+                   <label for="city">City</label><br>
+                   <input type="text" formControlName="city" required>
 
-                     <br>
-                     <button type="submit" style="margin-left: 30%;"  class="btn btn-primary">Save</button>
-                    </form>
-
-                </div>
-            </div>
+                   <br>
+                   <label for="state">State</label><br>
+                   <select   formControlName="state" required>
+                      <option value>- Select -</option>
+                      <option value="AL">AL - Alabama</option>
+                      <option value="AK">AK - Alaska</option>
+                      <option value="AS">AS - American Samoa</option>
+                      <option value="AZ">AZ - Arizona</option>
+                      <option value="AR">AR - Arkansas</option>
+                      <option value="CA">CA - California</option>
+                      <option value="CO">CO - Colorado</option>
+                      <option value="CT">CT - Connecticut</option>
+                      <option value="DE">DE - Delaware</option>
+                      <option value="DC">DC - District of Columbia</option>
+                      <option value="FL">FL - Florida</option>
+                      <option value="GA">GA - Georgia</option>
+                      <option value="GU">GU - Guam</option>
+                      <option value="HI">HI - Hawaii</option>
+                      <option value="ID">ID - Idaho</option>
+                      <option value="IL">IL - Illinois</option>
+                      <option value="IN">IN - Indiana</option>
+                      <option value="IA">IA - Iowa</option>
+                      <option value="KS">KS - Kansas</option>
+                      <option value="KY">KY - Kentucky</option>
+                      <option value="LA">LA - Louisiana</option>
+                      <option value="ME">ME - Maine</option>
+                      <option value="MD">MD - Maryland</option>
+                      <option value="MA">MA - Massachusetts</option>
+                      <option value="MI">MI - Michigan</option>
+                      <option value="MN">MN - Minnesota</option>
+                      <option value="MS">MS - Mississippi</option>
+                      <option value="MO">MO - Missouri</option>
+                      <option value="MT">MT - Montana</option>
+                      <option value="NE">NE - Nebraska</option>
+                      <option value="NV">NV - Nevada</option>
+                      <option value="NH">NH - New Hampshire</option>
+                      <option value="NJ">NJ - New Jersey</option>
+                      <option value="NM">NM - New Mexico</option>
+                      <option value="NY">NY - New York</option>
+                      <option value="NC">NC - North Carolina</option>
+                      <option value="ND">ND - North Dakota</option>
+                      <option value="MP">MP - Northern Mariana Islands</option>
+                      <option value="OH">OH - Ohio</option>
+                      <option value="OK">OK - Oklahoma</option>
+                      <option value="OR">OR - Oregon</option>
+                      <option value="PA">PA - Pennsylvania</option>
+                      <option value="PR">PR - Puerto Rico</option>
+                      <option value="RI">RI - Rhode Island</option>
+                      <option value="SC">SC - South Carolina</option>
+                      <option value="SD">SD - South Dakota</option>
+                      <option value="TN">TN - Tennessee</option>
+                      <option value="TX">TX - Texas</option>
+                      <option value="UM">UM - United States Minor Outlying Islands</option>
+                      <option value="UT">UT - Utah</option>
+                      <option value="VT">VT - Vermont</option>
+                      <option value="VI">VI - Virgin Islands</option>
+                      <option value="VA">VA - Virginia</option>
+                      <option value="WA">WA - Washington</option>
+                      <option value="WV">WV - West Virginia</option>
+                      <option value="WI">WI - Wisconsin</option>
+                      <option value="WY">WY - Wyoming</option>
+                      <option value="AA">AA - Armed Forces Americas</option>
+                      <option value="AE">AE - Armed Forces Africa</option>
+                      <option value="AE">AE - Armed Forces Canada</option>
+                      <option value="AE">AE - Armed Forces Europe</option>
+                      <option value="AE">AE - Armed Forces Middle East</option>
+                      <option value="AP">AP - Armed Forces Pacific</option>
+                    </select>
+                    <br>
            
-            </div>
+                    <label for="zipcode">ZipCode</label><br>
+                    <input type="number" formControlName="zipcode" required>
+
+                   <br>
+                   <button type="submit" style="margin-left: 30%;"  class="btn btn-primary">Save</button>
+                  </form>
+
+              </div>
+          </div>
+         
           </div>
         </div>
         </div>
