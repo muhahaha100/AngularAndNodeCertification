@@ -47,7 +47,7 @@
     <input formControlName="description" type="text" class="form-control" id="DescriptionInput" placeholder="Enter Product Description">
     <div *ngIf="productForm.controls['description'].invalid && (productForm.controls['description'].touched)" class="alert">
       <p class="text-danger" *ngIf="productForm.controls['description'].errors?.['required']"> Desc is required</p>
-      <p class="text-danger" *ngIf="productForm.controls['description'].errors?.['minLength']"> yikes </p>
+      <p class="text-danger" *ngIf="productForm.controls['description'].errors?.['minLength']"> Description min length is 20! </p>
     </div>
   </div>
 

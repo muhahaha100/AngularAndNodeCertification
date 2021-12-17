@@ -6,7 +6,7 @@
         <div class="card shadow-sm">
           <div class="card-header bg-transparent text-center">
               <div *ngIf = "!defaultimage">
-                
+
 
             <div *ngIf="!updateimage">
               <img class="profile_img" style="width: 200px; margin-left: 10%;" src="https://source.unsplash.com/600x300/?student" alt="student dp">
@@ -17,22 +17,22 @@
             <img class="profile_img" style="width: 200px; margin-left: 10%;" src="https://teachin.id/content/uploads/photos/2021/09/sngine_47b9b3daba0071601b41e9a306ebbfec.jpg" alt="student dp">
           </div>
           <div *ngIf="defaultimage">
-              <img style="width: 200px; margin-left: 10%;" [src]="'assets/images/defaultimage.jpg'" >
+              <img style="width: 200px; margin-left: 10%;" [src]="'assets/images/defaultimage.jpeg'" >
               <br>
           </div>
-            <button type="button" style="margin-left: 5%; background-color: rgb(216, 180, 21);" 
+            <button type="button" style="margin-left: 5%; background-color: rgb(216, 180, 21);"
                 (click)= deleteImage()>Delete Image</button>
             &nbsp;
-            
 
-          
+
+
             <button type="button" (click)=updateImage() style=" white-space:pre-wrap; background-color: rgb(115, 164, 209);">Upload</button>
-        
 
-        
-            <div class="card-body" style="margin-left: 25%;"> 
-            <p> FirstName:<b> {{profile1.fname}} </b></p> 
-            
+
+
+            <div class="card-body" style="margin-left: 25%;">
+            <p> FirstName:<b> {{profile1.fname}} </b></p>
+
             <p>Lastname: <b>{{profile1.lname}}</b></p>
             <p>Email:  <b>{{profile1.email}}</b></p>
             <p>Phone:<b> {{profile1.phone}}</b></p>
@@ -40,19 +40,19 @@
             <ul>
               <a *ngFor="let emp of interests"><b>{{emp}} </b></a>
             </ul>
-           Address 
+           Address
               <div *ngIf="!editAddress">
 
-              
 
-                <b>{{profile1.address.street}}, {{profile1.address.city}}, 
+
+                <b>{{profile1.address.street}}, {{profile1.address.city}},
                     {{profile1.address.zipcode}}, {{profile1.address.state}}
                 </b>
               </div>
-          
-         
+
+
               <div   style="text-align: left;" *ngIf="!editAddress">
-                
+
                   <button style="background-color:rgb(115, 164, 209);"
                       (click)= updateAddress()>
                        Edit</button>
@@ -138,7 +138,7 @@
                       <option value="AP">AP - Armed Forces Pacific</option>
                     </select>
                     <br>
-           
+
                     <label for="zipcode">ZipCode</label><br>
                     <input type="number" formControlName="zipcode" required>
 
@@ -148,7 +148,7 @@
 
               </div>
           </div>
-         
+
           </div>
         </div>
         </div>

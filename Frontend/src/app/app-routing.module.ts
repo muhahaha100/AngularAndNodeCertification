@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'cart/item', component: CartItemComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'cart/checkout', component: CheckoutComponent },
-  { path: 'orders', component: OrdersComponent },
+  { path: 'order', component: OrdersComponent },
   { path: 'cart/orders', component: OrdersComponent },
   { path: 'profile', component: UserProfileComponent },
   { path: 'login', component: LoginComponent },
