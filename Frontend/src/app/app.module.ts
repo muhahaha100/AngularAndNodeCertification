@@ -20,6 +20,7 @@ import { CheckoutComponent } from './cart/checkout/checkout.component';
 import { OrdersComponent } from './cart/orders/orders.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoginComponent } from './login-page/login/login.component';
+import { SignupComponent } from './signup-page/signup/signup.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { LoginComponent } from './login-page/login/login.component';
     CheckoutComponent,
     OrdersComponent,
     UserProfileComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

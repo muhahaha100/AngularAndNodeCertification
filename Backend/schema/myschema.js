@@ -2,10 +2,13 @@ const mongoose = require('mongoose')
 const myschema = mongoose.Schema
 
 const Loginschema = new myschema({
-    firstname: String,
-    lastname: String,
+    fname: String,
+    lname: String,
+    phone: Number,
     email:  String,
-    password: String
+    address: String,
+    password: String,
+    type: String
 },{versionKey: false})
 
-module.exports = mongoose.model('mylogin', Loginschema, 'logintable')
+module.exports = mongoose.model('users', Loginschema, 'logintable')

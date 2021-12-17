@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose')
 
-const myserverlocation= 'mongodb://localhost:27017/logindb'
+const myserverlocation= 'mongodb://localhost:27017/storedb'
 
 mongoose.connect(
     myserverlocation,

@@ -37,7 +37,7 @@ app.get('/api/profiles/:id', (req,res)=>
     res.send(profile)
 })
 //change the port number 
-const port =process.env.PORT || 3000
+const port =process.env.PORT || 8080
 
 //to add to the array
 
@@ -55,4 +55,4 @@ app.post('/api/profile',(req,res)=>
 
 })
 
-app.listen(3000,()=>console.log(`Listining on port ${port}...`))
+app.listen(8080,()=>console.log(`Listining on port ${port}...`))

@@ -11,6 +11,7 @@ import { CheckoutComponent } from './cart/checkout/checkout.component';
 import { OrdersComponent } from './cart/orders/orders.component'
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoginComponent } from './login-page/login/login.component';
+import { SignupComponent } from './signup-page/signup/signup.component';
 
 const routes: Routes = [
   { path: 'add', component: AddNewProductComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'cart/orders', component: OrdersComponent },
   { path: 'profile', component: UserProfileComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
   { path: '', component: CustomerHomepageComponent }
 ];
 

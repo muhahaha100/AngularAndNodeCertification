@@ -6,18 +6,18 @@ const bodyparser = require('body-parser')
 router.use(bodyparser.urlencoded({ extended: true }))
 router.use(bodyparser.json())
 
-const Mylogin = require('../schema/myschema')
+const users = require('../schema/myschema')
 app.set('view engine', 'ejs')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const config = { 'secret': 'mysecret' }
 
 //Register the User
-router.post('/register', (req, res) => {
+router.post('/users/register', (req, res) => {
     const myhashpassword = bcrypt.hashSync(req.body.password, 8)
-    Mylogin.create({
-        fname: req.body.firstname,
-        lname: req.body.lastname,
+    users.create({
+        fname: req.body.fname,
+        lname: req.body.lname,
         email: req.body.email,
         password: myhashpassword,
         type: "customer"
@@ -34,8 +34,8 @@ router.post('/register', (req, res) => {
 })
 
 //Register the User
-router.post('/login', (req, res) => {
-    Mylogin.findOne({
+router.post('/users/login', (req, res) => {
+    users.findOne({
         email: req.body.email,
     },(err,mydata) => {
         if(err) return res.status(500).send("Initial Server Error")
