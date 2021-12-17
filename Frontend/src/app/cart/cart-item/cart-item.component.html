@@ -2,6 +2,6 @@
     <span>{{cartItem.productName}}</span> x
     <span>{{cartItem.qty}}</span> :
     <strong>{{ (cartItem.qty * cartItem.price) | currency: 'EUR'}}</strong>
-    <button class="remove" ></button>
+    <button routerlink='/delete' class="remove" >Delete </button>
 </div>
 
